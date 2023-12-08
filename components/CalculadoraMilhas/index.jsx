@@ -5,20 +5,20 @@ import shapeshifter from 'classnames';
 export function CalculadoraMilhas() {
   //1. Quantas milhas serão convertidas de pontos adquiridos em compras bonificadas, como o Livelo
   //.. Transferência de bônus de compras para milhas
-  const [quantidadeDePontos, setQuantidadeDePontos] = useState(1000);
-  const [bonusTransferencia, setBonusTransferencia] = useState(1);
-  const [quantidadeDeMilhas, setQuantidadeDeMilhas] = useState(0);
+  const [quantidadeDePontos, setQuantidadeDePontos] = useState('');
+  const [bonusTransferencia, setBonusTransferencia] = useState('');
+  const [quantidadeDeMilhas, setQuantidadeDeMilhas] = useState('');
 
   //2. Quantos reais serão adquiridos vendendo milhas a milheiros, como agências de viagem
   //.. Venda das milhas para um terceiro
-  const [precoComprador, setPrecoComprador] = useState(15);
+  const [precoComprador, setPrecoComprador] = useState('');
   //KMilhas ... cálculo com vars existentes
   //Reais adquiridos ... cálculo com vars existentes
 
   //3. Quanto estarei economizando em uma passagem
   //.. Economia via utilização em passagem aérea
-  const [passagemMilhas, setPassagemMilhas] = useState(0);
-  const [passagemReais, setPassagemReais] = useState(0);
+  const [passagemMilhas, setPassagemMilhas] = useState('');
+  const [passagemReais, setPassagemReais] = useState('');
 
   const calcularMilhas = () => {
     const milhasConvertidas = quantidadeDePontos * bonusTransferencia;
@@ -41,7 +41,7 @@ export function CalculadoraMilhas() {
           <p className="text-sm">Quantidade de Pontos</p>
           <input
             className={shapeshifter(
-              'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+              'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
               {
                 'border-transparent bg-emerald-100': quantidadeDePontos > 0,
               }
@@ -60,7 +60,7 @@ export function CalculadoraMilhas() {
             type="number"
             step="any"
             className={shapeshifter(
-              'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+              'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
               {
                 'border-transparent bg-emerald-100': bonusTransferencia >= 1,
               }
@@ -79,7 +79,7 @@ export function CalculadoraMilhas() {
               type="number"
               step="any"
               className={shapeshifter(
-                'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+                'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
                 {
                   'border-transparent bg-slate-200': quantidadeDeMilhas,
                 }
@@ -100,7 +100,7 @@ export function CalculadoraMilhas() {
           <p className="text-sm">Preço do comprador</p>
           <input
             className={shapeshifter(
-              'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+              'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
               {
                 'border-transparent bg-emerald-100': precoComprador > 0,
               }
@@ -122,7 +122,7 @@ export function CalculadoraMilhas() {
               type="number"
               step="any"
               className={shapeshifter(
-                'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+                'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
                 {
                   'border-transparent bg-slate-200': quantidadeDeMilhas,
                 }
@@ -144,7 +144,7 @@ export function CalculadoraMilhas() {
               type="number"
               step="any"
               className={shapeshifter(
-                'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+                'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
                 {
                   'border-transparent bg-slate-200':
                     quantidadeDeMilhas && precoComprador,
@@ -166,7 +166,7 @@ export function CalculadoraMilhas() {
           <p className="text-sm">Custo da passagem em milhas</p>
           <input
             className={shapeshifter(
-              'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+              'max-w-[120px] text-center border-slate-300 border-b-2 border-dashed',
               {
                 'border-transparent bg-emerald-100': passagemMilhas > 0,
               }
@@ -183,7 +183,7 @@ export function CalculadoraMilhas() {
           <p className="text-sm">Custo da passagem em reais</p>
           <input
             className={shapeshifter(
-              'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+              'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
               {
                 'border-transparent bg-emerald-100': passagemReais > 0,
               }
@@ -203,7 +203,7 @@ export function CalculadoraMilhas() {
               type="number"
               step="any"
               className={shapeshifter(
-                'max-w-[120px] bg-transparent text-center border-slate-300 border-b-2 border-dashed',
+                'max-w-[120px]  text-center border-slate-300 border-b-2 border-dashed',
                 {
                   'border-transparent bg-slate-200':
                     passagemMilhas && passagemReais,
